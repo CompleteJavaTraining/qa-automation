@@ -21,9 +21,9 @@
    - Add the following dependencies inside the `<dependencies>` section:
      ```xml
      <dependency>
-       <groupId>io.github.bonigarcia</groupId>
-        <artifactId>webdrivermanager</artifactId>
-        <version>5.3.2</version>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>4.9.0</version>
      </dependency>
      <dependency>
         <groupId>org.junit.jupiter</groupId>
@@ -42,28 +42,22 @@
 
      import org.junit.Test;
      import org.openqa.selenium.WebDriver;
-     import org.openqa.selenium.chrome.ChromeDriver;
-
-     public class SeleniumChromeTest {
+     import org.openqa.selenium.firefox.FirefoxDriver;
+     
+     public class SeleniumTest {
        @Test
        public void openGoogle() {
-         WebDriver driver = null;
-         WebDriverManager.chromedriver().browserVersion("77.0.3865.40").setup(); //Or for latest version: WebDriverManager.chromedriver().setup();
-         ChromeOptions options = new ChromeOptions();
-         options.addArguments("start-maximized"); 
-         options.addArguments("enable-automation"); 
-         options.addArguments("--no-sandbox"); 
-         options.addArguments("--disable-infobars");
-         options.addArguments("--disable-dev-shm-usage");
-         options.addArguments("--disable-browser-side-navigation"); 
-         options.addArguments("--disable-gpu"); 
-         driver = new ChromeDriver(options); 
-         driver.get("https://www.google.com/"); 
+         System.setProperty("webdriver.chrome.driver", "path/to/chrome");
+         WebDriver driver = new ChromeDriver();
+         driver.get("https://www.google.com");
          driver.quit();
        }
      }
-     ```
 
+     ```
+   Replace "path/to/geckodriver" with the actual path to the geckodriver executable for the Firefox browser. Download it from: https://github.com/mozilla/geckodriver/releases.
+
+   You can also use other WebDriver implementations like ChromeDriver for the Chrome.
 5. **Run the Selenium test:**
    - Right-click on the "SeleniumChromeTest.java" file and choose "Run Java".
    - The test will be executed, and you should see the Chrome browser open, navigate to google.com, and then close.
