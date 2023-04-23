@@ -9,6 +9,7 @@ abstract class Shape {
 class Circle extends Shape {
     private final double radius;
 
+    //constructor
     public Circle(double radius) {
         this.radius = radius;
     }
@@ -21,6 +22,13 @@ class Circle extends Shape {
 
 // Final class
 final class MathUtil {
+
+    //static field
+    public static int staticValue = 10;
+
+    //instance field
+    public int instanceValue = 10;
+
     // Static method
     public static int addNumbers(int a, int b) {
         return a + b;
@@ -31,6 +39,12 @@ final class MathUtil {
         return a * b;
     }
 }
+
+//any class declared as final cannot have child classes
+// class AnotherMathUtil extends MathUtil {
+
+// }
+
 
 public class ModifiersDemo {
 
@@ -44,10 +58,17 @@ public class ModifiersDemo {
         double product = mathUtil.multiplyNumbers(2.5, 4.5);
         System.out.println("Product of 2.5 and 4.5: " + product);
 
+        //creating an instance of an abstract class - is not allowed
+        //Shape shape = new Shape();
+
         // Creating an instance of Circle class
-        Circle circle = new Circle(5);
+        Circle circle = new Circle(5); //calling the constructor
         double area = circle.calculateArea();
         System.out.println("Area of a circle with radius 5: " + area);
+
+        //accessing static vs instance fields/variables
+        System.out.println(MathUtil.staticValue);
+        System.out.println(mathUtil.instanceValue);
     }
 }
 

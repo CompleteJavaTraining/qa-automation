@@ -32,7 +32,7 @@ class Child extends Parent {
         // System.out.println("privateVar: " + privateVar); // Error: privateVar has private access in Parent
         System.out.println("protectedVar: " + protectedVar);
         System.out.println("packagePrivateVar: " + packagePrivateVar);
-
+        //System.out.println("privateVar: " + privateVar);
         publicMethod();
         // privateMethod(); // Error: privateMethod() has private access in Parent
         protectedMethod();

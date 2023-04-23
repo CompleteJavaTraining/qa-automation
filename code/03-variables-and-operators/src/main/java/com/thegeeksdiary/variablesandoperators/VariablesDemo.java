@@ -2,12 +2,18 @@ package com.thegeeksdiary.variablesandoperators;
 
 class Counter {
     // Static (class) variable
-    private static int staticCount = 0;
+    public static int staticCount = 0;
 
     // Instance variable
     private int instanceCount = 0;
 
     public void increment() {
+
+        //first declare and then assign
+        //int declareFirst;
+        //declareFirst = 0;
+
+        //declare and assign in a single line
         // Local variable
         int localCount = 0;
 
@@ -19,6 +25,14 @@ class Counter {
         System.out.println("Static count: " + staticCount +
                            ", Instance count: " + instanceCount +
                            ", Local count: " + localCount);
+    }
+    public void decrement(){
+        //local variable from the increment is not accessible here
+        //localCount
+
+        //however the instance variable instanceCount is available in other methods of the class as well
+        instanceCount--; //instanceCount = instanceCount-1
+        System.out.println(instanceCount);
     }
 }
 

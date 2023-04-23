@@ -3,7 +3,7 @@ package com.thegeeksdiary.programstructure;
 public class ConditionalBlocksDemo {
 
     public static void main(String[] args) {
-        int number = 10;
+        int number = -1;
 
         if (number > 0) {
             System.out.println("The number is positive.");

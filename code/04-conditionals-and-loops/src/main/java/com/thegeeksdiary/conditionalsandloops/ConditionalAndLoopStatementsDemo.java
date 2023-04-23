@@ -25,6 +25,27 @@ public class ConditionalAndLoopStatementsDemo {
             System.out.println("Number is zero.");
         }
 
+        int first = 10; int second=70; int third = 8; int fourth=2;
+
+        if(first>second){
+            if(first>third){
+                if(first>fourth){
+                    System.out.println("First is the largest number.");
+                }
+                else {
+                    System.out.println("Fourth is the largest number.");
+                }
+            } else {
+                if(third>fourth){
+                    System.out.println("Third is the largest number.");
+                }else {
+                    System.out.println("Fourth is the largest number.");
+                }
+            }
+        } else {
+            System.out.println("First is not the largest number.");
+        }
+
         // Switch statement
         int day = 3;
         System.out.print("Day " + day + " is ");

@@ -10,7 +10,7 @@ public class LoopBlocksDemo {
 
         System.out.println("\nEnhanced for loop example:");
         String[] names = {"Alice", "Bob", "Charlie", "David"};
-        for (String name : names) {
+        for (String name : names) {  //for String name in names - foreach loop
             System.out.println("Name: " + name);
         }
 

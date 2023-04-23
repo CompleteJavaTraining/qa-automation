@@ -45,6 +45,18 @@ public class OperatorsDemo {
         System.out.println("x && y: " + (x && y));
         System.out.println("x || y: " + (x || y));
         System.out.println("!x: " + (!x));
+
+        //bitwise - logical
+        System.out.println("\nBitwise Logical operators:");
+        System.out.println("x && y: " + (x & y));
+        System.out.println("x || y: " + (x | y));
+        System.out.println("!x: " + (!x));
+
+        //bitwise - numerical
+        System.out.println("\nBitwise Numerical operators:");
+        System.out.println("x && y: " + (c & a));
+        System.out.println("x || y: " + (c | a));
+        System.out.println("!x: " + (!x));
     }
 }
 
