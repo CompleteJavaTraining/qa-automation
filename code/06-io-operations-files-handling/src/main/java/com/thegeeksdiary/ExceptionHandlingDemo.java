@@ -7,33 +7,44 @@ public class ExceptionHandlingDemo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        // System.out.print("Enter a number: ");
+        //     int num = scanner.nextInt();
+        //     int result = 10 / num;
+        //     System.out.println("Result: " + result);
         // Example of try-catch block
         try {
             System.out.print("Enter a number: ");
-            int num = scanner.nextInt();
+            String numString = scanner.nextLine();
+            int num = Integer.parseInt(numString);
             int result = 10 / num;
             System.out.println("Result: " + result);
         } catch (ArithmeticException e) {
             System.out.println("Error: " + e.getMessage());
         }
-
-        // Example of try-catch-finally block
+        Scanner fileScanner = null;
         try {
-            System.out.print("Enter the file path: ");
+            //scanner.close();
+            // scanner = new Scanner(System.in);
+            System.out.println("Enter the file path: ");
             String filePath = scanner.nextLine();
             // Assume that we are trying to read the contents of the file
             // but it does not exist
-            Scanner fileScanner = new Scanner(new java.io.File(filePath));
+            fileScanner = new Scanner(new java.io.File(filePath));
             while (fileScanner.hasNextLine()) {
                 System.out.println(fileScanner.nextLine());
             }
         } catch (java.io.FileNotFoundException e) {
             System.out.println("Error: " + e.getMessage());
-        } finally {
+        } catch (IllegalStateException e){
+            System.out.println("Scanner is already closed");
+        }
+        finally {
             scanner.close();
+            if((fileScanner != null)){
+                fileScanner.close();
+            }
         }
     }
-
 }
 
 /*

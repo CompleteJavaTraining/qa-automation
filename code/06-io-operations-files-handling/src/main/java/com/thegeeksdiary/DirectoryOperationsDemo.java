@@ -7,7 +7,7 @@ public class DirectoryOperationsDemo {
     public static void main(String[] args) {
 
         // Creating a directory
-        File directory = new File("myDirectory");
+        File directory = new File("D:\\Development\\training\\qa-automation\\code\\06-io-operations-files-handling\\src\\main\\java\\com\\thegeeksdiary\\myDirectory");
         if (!directory.exists()) {
             boolean result = directory.mkdir();
             if (result) {

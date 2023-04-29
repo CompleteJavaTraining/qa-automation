@@ -7,9 +7,9 @@ import java.io.FileNotFoundException;
 public class ScannerDemo {
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter your name: ");
-        String name = scanner.nextLine();
+        Scanner scanner = new Scanner(System.in); //read from console aka stdin (standard input)
+        System.out.print("Enter your name: "); //print on the console aka stdout (standard output)
+        String name = scanner.nextLine(); //wait until the end of line
         System.out.println("Hello, " + name);
 
         scanner = new Scanner("1 fish 2 fish red fish blue fish");

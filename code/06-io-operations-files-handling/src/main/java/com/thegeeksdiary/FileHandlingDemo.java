@@ -11,7 +11,7 @@ public class FileHandlingDemo {
 
         // Creating a file
         try {
-            File file = new File("output.txt");
+            File file = new File("D:\\Development\\training\\qa-automation\\code\\06-io-operations-files-handling\\src\\main\\java\\com\\thegeeksdiary\\output.txt");
             if (file.createNewFile()) {
                 System.out.println("File created: " + file.getName());
             } else {
@@ -24,7 +24,7 @@ public class FileHandlingDemo {
 
         // Writing to a file
         try {
-            FileWriter writer = new FileWriter("output.txt");
+            FileWriter writer = new FileWriter("D:\\Development\\training\\qa-automation\\code\\06-io-operations-files-handling\\src\\main\\java\\com\\thegeeksdiary\\output.txt");
             writer.write("Hello, world!\n");
             writer.write("This is a sample file.\n");
             writer.close();
@@ -36,7 +36,7 @@ public class FileHandlingDemo {
 
         // Reading from a file
         try {
-            File file = new File("output.txt");
+            File file = new File("D:\\Development\\training\\qa-automation\\code\\06-io-operations-files-handling\\src\\main\\java\\com\\thegeeksdiary\\output.txt");
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
@@ -48,8 +48,8 @@ public class FileHandlingDemo {
             e.printStackTrace();
         }
 
-        // Deleting a file
-        File file = new File("output.txt");
+        //Deleting a file
+        File file = new File("D:\\Development\\training\\qa-automation\\code\\06-io-operations-files-handling\\src\\main\\java\\com\\thegeeksdiary\\output.txt");
         if (file.delete()) {
             System.out.println("File deleted: " + file.getName());
         } else {
