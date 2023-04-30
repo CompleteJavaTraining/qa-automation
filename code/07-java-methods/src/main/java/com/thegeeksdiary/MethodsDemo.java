@@ -1,64 +1,24 @@
 package com.thegeeksdiary;
-
-import java.util.Arrays;
-
 public class MethodsDemo {
-
-    // Example of a no input - no output method
-    public static void greet() {
-        System.out.println("Hello, World!");
-    }
-
-    // Example of a some input - no output method
-    public static void greetByName(String name) {
-        System.out.println("Hello, " + name + "!");
-    }
-
-    // Example of a some input - some output method
-    public static int sum(int a, int b) {
-        return a + b;
-    }
-
-    // Example of a no input - some output method
-    public static int[] generateRandomNumbers() {
-        int[] numbers = new int[5];
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = (int) (Math.random() * 10);
-        }
-        return numbers;
-    }
-
-    // Example of using a built-in method
-    public static void printArray(int[] arr) {
-        System.out.println(Arrays.toString(arr));
-    }
-
-    // Example of a user-defined method
-    public static int calculateFactorial(int num) {
-        if (num == 0 || num == 1) {
-            return 1;
-        }
-        return num * calculateFactorial(num - 1);
-    }
 
     public static void main(String[] args) {
 
         // Calling a no input - no output method
-        greet();
+        MethodDemoStatic.greet();
 
         // Calling a some input - no output method
-        greetByName("John");
+        MethodDemoStatic.greetByName("John");
 
         // Calling a some input - some output method
-        int result = sum(5, 3);
+        int result = MethodDemoStatic.sum(5, 3);
         System.out.println("Result: " + result);
 
         // Calling a no input - some output method
-        int[] numbers = generateRandomNumbers();
-        printArray(numbers);
+        int[] numbers = MethodDemoStatic.generateRandomNumbers();
+        //printArray(numbers);
 
         // Using a user-defined method
-        int factorial = calculateFactorial(5);
+        int factorial = MethodDemoStatic.calculateFactorial(5);
         System.out.println("Factorial: " + factorial);
     }
 
