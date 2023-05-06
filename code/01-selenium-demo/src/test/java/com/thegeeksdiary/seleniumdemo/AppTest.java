@@ -30,14 +30,15 @@ class AppTest {
     public void tearDown() {
         driver.quit();
     }
+
     @Test
     public void testGoogleSearch() {
         WebElement searchBox = driver.findElement(By.name("q"));
         searchBox.sendKeys("Selenium WebDriver");
-        searchBox.sendKeys(Keys.RETURN);
+        searchBox.sendKeys(Keys.RETURN);    //simulate enter key press
 
         // Check if the search results contain the expected text
-        WebElement searchResult = driver.findElement(By.xpath("//div[@id='search']//span[contains(text(), 'Selenium WebDriver')]"));
+        WebElement searchResult = driver.findElement(By.xpath("//textarea[contains(text(), 'Selenium WebDriver')]"));
         assert searchResult.isDisplayed();
     }
 
