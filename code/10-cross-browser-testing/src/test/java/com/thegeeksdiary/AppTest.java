@@ -66,27 +66,48 @@ class AppTest {
         }
     }
 
-    void testWebpageLoading(WebDriver driver) throws InterruptedException{
-        driver.get("https://www.google.com/");
+    void testWebpageLoadingAndTitle(WebDriver driver, String expectedTitle, String url) throws InterruptedException{
+        driver.get(url);
         Thread.sleep(5000);
         String pageTitle = driver.getTitle();
-        assert pageTitle.equals("Google");
+        assert pageTitle.equals(expectedTitle);
     }
 
     @Test
     public void testGoogle() throws InterruptedException {
         WebDriver driver;
+        String expectedTitle = "Google";
+        String url = "https://www.google.com/";
         if(browser.equals("chrome")){
             driver = chromeDriver;
-            testWebpageLoading(driver);
+            testWebpageLoadingAndTitle(driver, expectedTitle, url);
         } else if (browser.equals("edge")){
             driver = edgeDriver;
-            testWebpageLoading(driver);
+            testWebpageLoadingAndTitle(driver, expectedTitle, url);
         } else {
             driver = chromeDriver;
-            testWebpageLoading(driver);
+            testWebpageLoadingAndTitle(driver, expectedTitle, url);
             driver = edgeDriver;
-            testWebpageLoading(driver);
+            testWebpageLoadingAndTitle(driver, expectedTitle, url);
+        }
+    }
+
+    @Test
+    public void testBing() throws InterruptedException {
+        WebDriver driver;
+        String expectedTitle = "Bing";
+        String url = "https://www.bing.com/";
+        if(browser.equals("chrome")){
+            driver = chromeDriver;
+            testWebpageLoadingAndTitle(driver, expectedTitle, url);
+        } else if (browser.equals("edge")){
+            driver = edgeDriver;
+            testWebpageLoadingAndTitle(driver, expectedTitle, url);
+        } else {
+            driver = chromeDriver;
+            testWebpageLoadingAndTitle(driver, expectedTitle, url);
+            driver = edgeDriver;
+            testWebpageLoadingAndTitle(driver, expectedTitle, url);
         }
     }
 }
